@@ -19,18 +19,7 @@ $('document').ready(function(){
 		secondsLeft--;
 	};
 
-	var timer = setInterval(function(){
-		
-		minusSecond();
-		console.log(secondsLeft);
-		if (secondsLeft <= 0) {
-			clearInterval(timer);
-			$('#answer').replaceWith('<h2>Game over! You got ' + totalWin + ' correct!</h2>');
 
-		}
-		$('#countdown').text(secondsLeft);
-
-	}, 1000);
 
 
 	//random question
@@ -52,7 +41,31 @@ $('document').ready(function(){
 	 	var correctAnswer = eval($('#question').text());
 	 	var inputAnswer = Number($('#answer').val());
 
-	 	if (correctAnswer === inputAnswer) {
+	 	if ((totalWin === 0) && (correctAnswer === inputAnswer)) {
+	 		
+	 		console.log('1st success');
+	 		$('#answer').val('');
+	 		console.log('1st input erased')
+	 		$('#question').text(randQuestion());
+	 		console.log('1st question changed', randQuestion());
+	 		totalWin++;
+	 		console.log('1st win', totalWin);
+
+	 		var timer = setInterval(function(){
+	 			minusSecond();
+	 			$('#countdown').text(secondsLeft);
+	 			console.log(secondsLeft);
+
+	 			if (secondsLeft <= 0) {
+	 				clearInterval(timer);
+	 				$('#answer').replaceWith('<h2>Game over! You got ' + totalWin + ' correct!</h2>');
+
+	 			}
+	 			$('#countdown').text(secondsLeft);
+
+	 		}, 1000);
+
+	 	} else if (correctAnswer === inputAnswer) {
 	 		console.log('success');
 	 		$('#answer').val('');
 	 		addSecond();
@@ -62,8 +75,7 @@ $('document').ready(function(){
 	 		console.log('question changed');
 	 		totalWin++;
 	 		console.log('total win', totalWin);
-
-	 	}
+		 	}
 	 };
 
 	// check question + generate random question
