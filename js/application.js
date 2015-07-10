@@ -6,24 +6,19 @@ $('document').ready(function(){
 // but countdown continue
 // countdown = 0 --> answer input replaced by game over text
 	
+	//wins variables
 	var totalWin = 0;
 
-	// timer
+	//timer variables
 	var secondsLeft = 10;
-	
 	var addSecond = function() {
 		secondsLeft++;
 	};
-
 	var minusSecond = function() {
 		secondsLeft--;
 	};
 
-
-
-
-	//random question
-	
+	//random question variables
 	var randQuestion = function() {
 		var randNumber1 = Math.floor(Math.random()*10);
 		var randNumber2 = Math.floor(Math.random()*10);
@@ -34,9 +29,8 @@ $('document').ready(function(){
 
 
 	//check answer
-
 	var checkAnswer = function() {
-	 	console.log('check answer');
+	 	console.log('checking answer');
 	 	
 	 	var correctAnswer = eval($('#question').text());
 	 	var inputAnswer = Number($('#answer').val());
@@ -51,6 +45,7 @@ $('document').ready(function(){
 	 		totalWin++;
 	 		console.log('1st win', totalWin);
 
+	 		//timer
 	 		var timer = setInterval(function(){
 	 			minusSecond();
 	 			$('#countdown').text(secondsLeft);
@@ -81,7 +76,6 @@ $('document').ready(function(){
 	// check question + generate random question
 
 	$(document).on('keyup', '#answer', function(){
-		console.log('key pressed!');
 		checkAnswer();
 	});
 

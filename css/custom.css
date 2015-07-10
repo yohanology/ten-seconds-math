@@ -1,0 +1,38 @@
+
+body {
+	background: linear-gradient(219deg, #8300b8, #2692d6);
+	background-size: 400% 400%;
+}
+
+h1 {
+	font-size: 100px;
+	color: #fff;
+}
+
+h2 {
+	font-size: 50px;
+	color: #fff;
+}
+
+span {
+	font-size: 60px;
+	color: #fff;
+}
+
+.container-fluid {
+	margin-top: 50px;
+}
+
+input {
+	border: 3px solid #fff;
+	background-color: transparent;
+	width: 300px;
+	font-size: 50px;
+	text-align: center;
+	color: #fff;
+	margin-top: 20px;
+}
+
+input:focus {
+	outline: none;
+}
