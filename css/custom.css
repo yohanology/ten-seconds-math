@@ -2,6 +2,7 @@
 body {
 	background: linear-gradient(219deg, #8300b8, #2692d6);
 	background-size: 400% 400%;
+	color: #fff;
 }
 
 h1 {
@@ -36,3 +37,12 @@ input {
 input:focus {
 	outline: none;
 }
+
+::-webkit-input-placeholder {
+    color: rgba(255, 255, 255, 0.1);
+}
+
+.bottom-bar {
+	margin-top: 100px;
+}
+

@@ -18,6 +18,9 @@ $('document').ready(function(){
 		secondsLeft--;
 	};
 
+
+	
+
 	//random question variables
 	var randQuestion = function() {
 		var randNumber1 = Math.floor(Math.random()*10);
@@ -26,6 +29,8 @@ $('document').ready(function(){
 	};
 
 	$('#question').text(randQuestion());
+
+
 
 
 	//check answer
@@ -74,7 +79,6 @@ $('document').ready(function(){
 	 };
 
 	// check question + generate random question
-
 	$(document).on('keyup', '#answer', function(){
 		checkAnswer();
 	});
