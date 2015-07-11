@@ -24,7 +24,7 @@ span {
 	margin-top: 50px;
 }
 
-input {
+#answer {
 	border: 3px solid #fff;
 	background-color: transparent;
 	width: 300px;
@@ -34,7 +34,7 @@ input {
 	margin-top: 20px;
 }
 
-input:focus {
+#answer:focus {
 	outline: none;
 }
 
